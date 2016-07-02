@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load compressed %}
+{% load pipeline %}
 {% load staticfiles %}
 {% load timtec_markdown %}
 
 {% block js %}
 {{ block.super }}
-{% compressed_js 'lesson' %}
-{% compressed_js 'forum' %}
+{% javascript 'lesson' %}
+{% javascript 'forum' %}
 
 
 <script type="text/javascript" src="{% static 'js/introjs/lesson.js' %}"></script>
@@ -141,7 +141,7 @@ $(document).ready(function() {
 
 			    <script type="text/javascript">
 				$("#btn-end-course").show(function() {
-					mixpanel.track("Course ended"); 
+					mixpanel.track("Course ended");
 				});
 			    </script>
 			{% endif %}

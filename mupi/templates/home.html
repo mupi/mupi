@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% load i18n %}
-{% load compressed %}
+{% load pipeline %}
 {% load is_enrolled %}
 {% load get_flatpage %}
 {% load static %}
 
 {% block js %}
     {{ block.super }}
-    {% compressed_js 'core' %}
+    {% javascript 'core' %}
     <script type="text/javascript" src="/static/js/introjs/home.js"></script>
 {% endblock %}
 
@@ -17,7 +17,6 @@ home
 {% endblock %}
 
 {% block content %}
-
     <div id="home" ng-app="core" ng-controller="HomeCtrl">
         {% if in_admin %}
         <!-- ACTIONS -->

@@ -1,0 +1,19 @@
+@import 'modules/settings.scss';
+// Import Bootstrap's files
+// --------------------------------------------------
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Import Font Awesome's files
+// --------------------------------------------------
+@import "font-awesome/scss/font-awesome";
+
+
+@import 'components/headers.scss';
+@import 'components/navbar.scss';
+@import 'components/footer.scss';
+@import 'components/text-editor.scss';
+@import 'components/course-box.scss';
+@import 'pages/home.scss';
+@import 'pages/course.scss';
+@import 'pages/lesson.scss';
+@import 'pages/forum.scss';

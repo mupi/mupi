@@ -1,6 +1,15 @@
 // OVERWRITE BOOTSTRAP VARIABLES AND STYLES
 // ********************************************************************* //
 
+// Fonts
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+
 // COLORS
 $body-bg: white;
 //#eafaba;
@@ -20,7 +29,8 @@ $brand-light: #eee;
 $brand-red: #d11149;
 
 //Container sizes
-$container-large-desktop: $container-desktop;
+$container-large-desktop: 940px;
+$container-lg: $container-large-desktop;
 
 // NAVBAR
 // Reset inverted navbar basics
@@ -54,10 +64,9 @@ $icon-font-path: "../bootstrap/fonts/";
 body { color:#333; }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
-  font-family:'Raleway','HelveticaNeue','Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: normal;
-}
+$headings-font-family: 'Raleway','HelveticaNeue','Helvetica Neue',Helvetica,Arial,sans-serif;
+$headings-font-weight: normal;
+
 h1 { font-size:24px; }
 h2 { font-size:20px; }
 h3 { font-size:18px; }
@@ -69,15 +78,6 @@ h6 {
   text-transform:uppercase;
 }
 
-// Fonts
-@font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700);
-
 $main-navbar-font-family: 'Raleway','HelveticaNeue','Helvetica Neue',Helvetica,Arial,sans-serif;
 
 // Links
@@ -85,7 +85,7 @@ $link-color: $brand-info;
 $link-hover-color: darken($link-color, 15%);
 a, a:hover, a:active {
   text-decoration:none;
-  @include transition(all .25s ease-out);
+  // @include transition(all .25s ease-out);
 }
 
 // Components

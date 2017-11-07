@@ -1,4 +1,7 @@
+// Override bootstrap settings before importing it
+//---------------------------------------------------
 @import 'modules/settings.scss';
+
 // Import Bootstrap's files
 // --------------------------------------------------
 @import "bootstrap-sass/assets/stylesheets/bootstrap";

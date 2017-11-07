@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load pipeline %}
 {% load is_enrolled %}
 {% load get_flatpage %}
 {% load static %}
 
 {% block js %}
     {{ block.super }}
-    {% javascript 'core' %}
     <script type="text/javascript" src="/static/js/introjs/home.js"></script>
 {% endblock %}
 
@@ -39,12 +37,10 @@ home
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h1 class="home-title">Formação de professores</h1>
-                        <p class="lead">Aprenda com nossos cursos online o passo-a-passo de como utilizar as ferramentas gratuitas mais
-                            populares da internet em sua sala de aula.</p>
-                        <p>
-                            <a href="{% url 'courses' %}" class="btn btn-success text-uppercase">Conheça nossos cursos</a>
-                        </p>
+                        <h1 class="home-title">Formação continuada de professores</h1>
+                        <p class="lead">
+                          Oferecemos cursos gratuitos. Faça parte você também dessa comunidade de professores de todo Brasil! </p>
+                        <p><a href="{% url 'courses' %}" class="btn btn-success text-uppercase">Conheça nossos cursos</a></p>
                     </div>
                 </div>
             </div>
@@ -260,11 +256,11 @@ home
                   </div>
 
                   <!-- Controls -->
-                  <a class="left carousel-control" href="#carousel-testimonials" role="button" data-slide="prev">
+                  <a class="left carousel-control" data-target="#carousel-testimonials" role="button" data-slide="prev" ng-non-bindable>
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
                   </a>
-                  <a class="right carousel-control" href="#carousel-testimonials" role="button" data-slide="next">
+                  <a class="right carousel-control" data-target="#carousel-testimonials" role="button" data-slide="next" ng-non-bindable>
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Próximo</span>
                   </a>
@@ -277,11 +273,11 @@ home
                     <li data-target="#carousel-testimonials" data-slide-to="3"></li>
                     <li data-target="#carousel-testimonials" data-slide-to="4"></li>
                   </ol>
-
                 </div>
-
             </div>
         </section><!-- #how-it-works -->
+
+        <!--
         <section>
             <div class="apoio textcenter container">
                 <div class="row">
@@ -305,7 +301,8 @@ home
                     </div>
                 </div>
             </div>
-        </select>
+        </section>
+        -->
 
         {% if in_admin %}
             <div class="modal fade" id="modalSelectCourses">

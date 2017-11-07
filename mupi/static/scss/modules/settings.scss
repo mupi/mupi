@@ -4,7 +4,16 @@
 // Fonts
 @font-face {
     font-family: 'Raleway';
-    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+    src: url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Questrial';
+    src: url('../fonts/questrial/questrial-regular-webfont.eot');
+    src: url('../fonts/questrial/questrial-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/questrial/questrial-regular-webfont.woff') format('woff'),
+         url('../fonts/questrial/questrial-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -84,7 +93,7 @@ $main-navbar-font-family: 'Raleway','HelveticaNeue','Helvetica Neue',Helvetica,A
 $link-color: $brand-info;
 $link-hover-color: darken($link-color, 15%);
 a, a:hover, a:active {
-  text-decoration:none;
+  text-decoration:none; //  https://stackoverflow.com/questions/7188768/how-to-remove-underline-from-a-name-on-hover#answer-7188794
   // @include transition(all .25s ease-out);
 }
 

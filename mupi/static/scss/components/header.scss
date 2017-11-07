@@ -1,5 +1,42 @@
 // MAIN NAVBAR - DROPDOWN MENUS FOR SIGNIN AND SIGNUP
 // ********************************************************************* //
+.site-logo{
+    max-height: 100%;
+}
+
+.wrapper{
+    padding-top: 50px;
+}
+
+.navbar-default{
+    .navbar-nav {
+        text-transform: uppercase;
+        .sign-in, .sign-up{
+            padding: 5px 10px;
+            margin: 10px 5px;
+            color: #FFF;
+            border-radius: 5px;
+        }
+
+        .sign-in{
+            background-color: $gray-light;
+            &:hover, &:focus{
+                background-color: darken($gray-light, 10%);
+                color: #FFF;
+            }
+        }
+
+        .sign-up{
+            background-color: #60A76F;
+            &:hover, &:focus{
+                background-color: darken(#60A76F, 10%);
+                color: #FFF;
+            }
+        }
+    }
+}
+
+
 #main-navbar {
     border-radius: 0;
     font-family: $main-navbar-font-family;
@@ -7,6 +44,7 @@
     .navbar-brand {
         font-weight: bold;
         font-size: 22px;
+        padding: 10px;
     }
 
     .navbar-form {
@@ -59,6 +97,7 @@
 
     #start-intro {
         margin: 11px 10px 0 0;
+
         .fa {
             margin-left: 5px;
             vertical-align: middle;

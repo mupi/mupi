@@ -1,14 +1,45 @@
-#main-footer{
+#main-footer {
 	background-color: $brand-primary;
-	.nav-social-icons{
-		li{
+	padding: 40px 0;
+
+	// Social media icons
+	.nav-social-icons {
+		li {
 			font-size: 1.5em;
-			&:after{
+			display: inline-block;
+			margin: 0 8px;
+
+			&:after {
 				content: "";
 			}
-			& a:hover{
-				color: darken($brand-primary, 20%)
+
+			a {
+				color: #fff;
 			}
+
+			& a:hover {
+				color: darken($brand-primary, 20%);
+			}
+		}
+	} //.nav-social-icons
+
+	.credits {
+		padding-top: 10px;
+	}
+
+} // #main-footer
+
+#footer-credits {
+	@media screen and (min-width: $screen-md-max){
+		p{
+			padding-top: 10px;
+			text-align: right;
+		}
+	}
+
+	@media screen and (max-width: $screen-md-max){
+		p{
+			text-align: center;
 		}
 	}
 }

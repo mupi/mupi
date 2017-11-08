@@ -10,6 +10,7 @@
 // --------------------------------------------------
 @import "font-awesome/scss/font-awesome";
 
+@import 'modules/helpers.scss';
 
 @import 'components/header.scss';
 @import 'components/footer.scss';
@@ -17,5 +18,5 @@
 @import 'components/course-box.scss';
 
 @import 'pages/home.scss';
-@import 'pages/course.scss';
-@import 'pages/forum.scss';
+// @import 'pages/course.scss';
+// @import 'pages/forum.scss';

@@ -1,10 +1,14 @@
 {% load i18n %}
+{% load compress %}
 {% load socialaccount %}
 {% load in_group %}
 {% load static %}
 
-{% block js %}
-    <script type="text/javascript" src="/static/js/mixpaneltracking.js"></script>
+{% block js %}  
+    {% compress js %}
+        <script type="text/javascript" src="{% static 'js/header/app.js' %}"></script>
+        <script type="text/javascript" src="/static/js/mixpaneltracking.js"></script>
+    {% endcompress %}
 {% endblock %}
 
 <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">

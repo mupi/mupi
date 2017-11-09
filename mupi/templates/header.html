@@ -30,10 +30,15 @@
             </ul>
             <ul class="nav navbar-nav" id="session-nav">
                 <li>
-                    <a href="http://blog.tecsaladeaula.com.br" target="_blank">
-                        Blog
+                    <a href="http://mupi.me">
+                        Equipe
                     </a>
                 </li>
+                  <li>
+                      <a href="http://blog.tecsaladeaula.com.br" target="_blank">
+                          Blog
+                      </a>
+                  </li>
             {% if user.is_authenticated %}
                 {% if user.is_superuser %}
                 <li>
@@ -50,11 +55,6 @@
                 {% elif user|in_group:'professors' %}
                     <li {% if in_admin %}class="active"{% endif %}><a href="{% url 'administration.courses' %}" id="admin-link">{% trans "Admin" %}</a></li>
                 {% endif %}
-                <li>
-                    <a href="http://forum.tecsaladeaula.com.br" target="_blank">
-                        Fórum
-                    </a>
-                </li>
                 <li>
                     <a class="username dropdown-toggle" data-toggle="dropdown" href="#">
                         {{ user }}

@@ -23,23 +23,28 @@
       font-family: 'Raleway';
     } //.page-title
 
-    // repeatable blocks from home
-    .block {
-      margin-bottom: 40px;
-      @media (min-width: 380px) and (max-width: $screen-xs-max) {
-        float: none;
-        margin: 0 auto 40px;
-        max-width: 360px;
-      }
-    } // .block
 
-    // see all courses button
-    .see-all-courses {
-      @media (min-width: 380px) and (max-width: $screen-xs-max) {
-        margin: 0 auto;
-        max-width: 360px;
-      }
-    } //.see all courses button
+    #courses{
+      margin-bottom: 40px;
+
+      // repeatable blocks from home
+      .block {
+        margin-bottom: 40px;
+        @media (min-width: 380px) and (max-width: $screen-xs-max) {
+          float: none;
+          margin: 0 auto 40px;
+          max-width: 360px;
+        }
+      } // .block
+
+      // see all courses button
+      .see-all-courses {
+        @media (min-width: 380px) and (max-width: $screen-xs-max) {
+          margin: 0 auto;
+          max-width: 360px;
+        }
+      } //.see all courses button
+    } // #courses
 } // #home
 
 // how it works

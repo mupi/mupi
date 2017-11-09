@@ -83,11 +83,8 @@
         <script type="text/javascript" src="{% static 'js/vendor/pagedown/Markdown.Sanitizer.js' %}" charset="utf-8"></script>
         <script type='text/javascript' src="{% static 'angular-loading-bar/src/loading-bar.js' %}"></script>
     {% endcompress %}
-    <script src="{% url 'djangular' %}"></script>
-
 
     {% block js %}{% endblock %}
-
 
     {% analytics %}
     <script type="text/javascript" charset="utf-8">
@@ -171,11 +168,11 @@
     {% include 'footer.html' %}
 
 {% if user.is_authenticated %}
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
     ga('set', 'dimension1', '{{ user.id }}');
     ga('set', 'dimension2', '{{ user.get_user_type }}');
     ga('set', 'dimension3', '{{ user.is_pilot }}');
-    </script>
+    </script> -->
 {% else %}
     {% include 'account/login_modal.html' %}
     <script type="text/javascript" charset="utf-8">

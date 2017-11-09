@@ -10,9 +10,11 @@
 // --------------------------------------------------
 @import "font-awesome/scss/font-awesome";
 
+@import 'modules/mixins.scss';
 @import 'modules/helpers.scss';
 
 @import 'components/header.scss';
+@import 'components/headers.scss';
 @import 'components/footer.scss';
 @import 'components/text-editor.scss';
 @import 'components/course-box.scss';

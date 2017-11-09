@@ -15,7 +15,7 @@ wrapper-courses
             </header>
 
             <section id="courses" class="row">
-                <div class="col-md-offset-2 col-md-8">
+
 {#                    <div class="filters">#}
 {#                        <!--  FORM INLINE -->#}
 {#                        <div class="form-inline">#}
@@ -39,11 +39,11 @@ wrapper-courses
 {#                    </div>#}
                     {% for course in courses %}
                     <!-- COURSE -->
-                    <div class="course{% if user|is_enrolled:course %} started{% endif %}">
+                    <div class="col-md-offset-2 col-md-8 course-box{% if user|is_enrolled:course %} started{% endif %}">
                         <a href="{% url "course_intro" course.slug %}" class="course-link">
-                            {% if not course.has_started %}<span class="coming-soon-label">{% trans 'Soon' %}</span>{% endif %}
-                            {% if course.tuition == 0 %}<span class="free-label">Gratuito!</span>{% endif %}
                             <div class="thumb-wrapper">
+                              {% if not course.has_started %}<span class="coming-soon-label">{% trans 'Soon' %}</span>{% endif %}
+                              {% if course.tuition == 0 %}<span class="free-label">Gratuito!</span>{% endif %}
                                 <div class="mouseover"></div>
                                 <div class="thumb" {% if course.home_thumbnail %}style="background-image: url({{ course.home_thumbnail.url }})"{% endif %}></div>
 
@@ -69,10 +69,10 @@ wrapper-courses
                                 </div>
                             </div>
                         </a>
-                    </div>
                     <!-- END COURSE -->
+                    </div>
                     {% endfor %}
-                </div>
+
             </section>
         </div>
         <!-- CONTAINER -->

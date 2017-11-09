@@ -61,7 +61,7 @@ home
             </header>
             {% if in_admin %}
             <div class="row" class="sortable-container grid" sv-root sv-part="home_courses" sv-on-sort="set_order_changed()">
-                <div ng-repeat="course in home_courses" sv-element="opts" class="grid block course col-md-4 col-sm-6 col-xs-12" ng-class="{drag:organizingCourses}">
+                <div ng-repeat="course in home_courses" sv-element="opts" class="grid block course-box col-md-4 col-sm-6 col-xs-12" ng-class="{drag:organizingCourses}">
                     {% verbatim %}
                     <span class="btn btn-warning btn-drag" sv-handle ng-show="organizingCourses"><i class="fa fa-bars"></i></span>
                     <div class="thumb-wrapper">
@@ -90,7 +90,7 @@ home
             <div class="row">
 
                 {% for course in home_courses %}
-                    <div class="block course col-md-4 col-sm-6">
+                    <div class="block course-box col-md-4 col-sm-6">
                         <a href="{% url "course_intro" course.slug %}" class="course-link">
                             {% if not course.has_started %}<span class="coming-soon-label">{% trans 'Soon' %}</span>{% endif %}
                             {% if course.tuition == 0 %}<span class="free-label">Gratuito!</span>{% endif %}

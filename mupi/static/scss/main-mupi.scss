@@ -13,11 +13,13 @@
 @import 'modules/mixins.scss';
 @import 'modules/helpers.scss';
 
+@import 'components/course-box.scss';
+@import 'components/course-content.scss';
+@import 'components/course-nav.scss';
+@import 'components/footer.scss';
 @import 'components/header.scss';
 @import 'components/headers.scss';
-@import 'components/footer.scss';
 @import 'components/text-editor.scss';
-@import 'components/course-box.scss';
 
 @import 'pages/home.scss';
 // @import 'pages/course.scss';

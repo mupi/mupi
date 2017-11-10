@@ -54,12 +54,12 @@
             </div>
         </div>
     {% else %}
-        {% if course.get_video_professors %}
+        {% if course.course_authors %}
         <div class="page-header-double top">
             <h3>{% trans "Instructors" %}</h3>
         </div>
 
-        {% for course_professor in course.get_video_professors %}
+        {% for course_professor in course.course_authors.all %}
             <div {% if course_professor.user %}id="{{ course_professor.user.username }}"{% endif %} class="instructor row">
                 <div class="instructor-photo col-sm-2">
                     <img src="{{ course_professor.get_picture_url }}" class="img-rounded img-responsive">

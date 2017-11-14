@@ -1,12 +1,22 @@
 {% extends "base.html" %}
-{% load pipeline %}
+
 {% load i18n %}
+{% load static %}
+{% load compress %}
 {% load in_group %}
 {% load append_to_get %}
 
 {% block js %}
 {{ block.super }}
-    {% javascript 'users_admin' %}
+    {% compress js %}
+        <!-- Users admin -->
+        <script type="text/javascript" src="{% static 'js/users-admin/app.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/users-admin/controllers.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/users-admin/services.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/factories/timtec-models.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/fixedBar.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/alertPopup.js' %}"></script>
+    {% endcompress %}
     <script>
         window.total_users_found = {{ total_users_number }};
     </script>
@@ -96,18 +106,23 @@ wrapper-course-lesson
                 </tr>
             </table>
         </section>
-        <pagination total-items="total_users_found"
-                    items-per-page="50"
-                    ng-model="current_page"
-                    ng-change="page_changed()"
-                    max-size="5"
-                    boundary-links="true"
+        <div class="pagination-wrapper">
+                <ul uib-pagination boundary-links="true"
+                    total-items="total_users_found" 
+                    ng-model="current_page" 
+                    rotate="true" 
+                    force-ellipses="true" 
+                    max-size="5" 
+                    items-per-page="50" 
+                    ng-change="page_changed()" 
+                    class="pagination" 
                     previous-text="{% trans 'Previous' %}"
                     next-text="{% trans 'Next' %}"
                     first-text="{% trans 'First' %}"
                     last-text="{% trans 'Last' %}"
-                	ng-hide="filtered">
-        </pagination>
+                    ng-hide="filtered">
+                </ul>
+            </div>
     </div>
 
 </section>

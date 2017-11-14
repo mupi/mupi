@@ -2,11 +2,13 @@
 .actions-menu {
   background-color: darken($brand-light, 10%);
   height: 52px;
-  margin-bottom: 20px;
-  margin-top: 50px;
+  z-index: 1000;
+  top: 50px;
+  right: 0;
+  left: 0;
+  position: fixed;
 
   padding: 10px 0;
-  position: relative;
   .container {
     position: relative;
   }

@@ -24,14 +24,14 @@
 {% endblock %}
 
 {% block wrapper_classes %}
-home
+home {% if in_admin %} admin {% endif %}
 {% endblock %}
 
 {% block content %}
     <div id="home" ng-app="core" ng-controller="HomeCtrl">
         {% if in_admin %}
         <!-- ACTIONS -->
-        <div class="actions-menu" fixed-bar>
+        <div class="actions-menu">
             <div class="container">
                 <div class="actions-buttons">
                     <button class="btn btn-default" ng-click="organizingCourses=!organizingCourses">

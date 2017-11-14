@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load is_assistant_or_coordinator %}
+{% load is_course_coordinator %}
 <header class="main-header">
     <div class="page-header container">
         <div class="row">
@@ -13,10 +14,10 @@
             <div class="col-lg-4 col-sm-5">
                 <!-- COURSE-SECTION-NAV -->
                 <nav class="course-sections textright" id="course-nav">
-                    <a href="{% url 'course_intro' course.slug %}" class="has-tooltip fa fa-home {% if '/intro/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="Página inicial do curso"></a>
-                    <a href="{% url 'resume_course' course.slug %}" class="has-tooltip fa fa-book {% if '/lesson/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Resume course' %}"></a>
-                    <a href="http://forum.tecsaladeaula.com.br" target="_blank" class="has-tooltip fa fa-comments {% if '/forum/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Forum' %}"></a>
-                    <a href="{% url 'course_material' course.slug %}" class="has-tooltip fa fa-file {% if '/material/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="Referências bibliográficas"></a>
+                    <a href="{% url 'course_intro' course.slug %}" class="has-tooltip fa fa-home {% if '/intro/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Intro' %}"></a>
+                    <a href="{% url 'resume_course' course.slug %}" class="has-tooltip fa fa-film {% if '/lesson/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Resume course' %}"></a>
+                    <a href="{% url 'forum' course.slug %}" class="has-tooltip fa fa-comments {% if '/forum/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Forum' %}"></a>
+                    <a href="{% url 'course_material' course.slug %}" class="has-tooltip fa fa-file {% if '/material/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Course material' %}"></a>
                     <a href="{% url 'user_course_notes' course.slug %}" class="has-tooltip fa fa-pencil-square-o {% if '/mynotes/' in request.path %}active{% endif %}" data-toggle="tooltip" data-placement="top" data-original-title="{%  trans 'Course notes' %}"></a>
                     {% if user|is_assistant_or_coordinator:course %}
                         <div class="dropdown">
@@ -25,6 +26,10 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'messages' course.slug %}">{% trans 'Messages' %}</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'reports' course.slug %}">{% trans 'Reports' %}</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'classes' course.slug %}">{%  trans 'Classes' %}</a></li>
+                                {% if user.is_superuser or user|is_course_coordinator:course %}
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'administration.edit_course' course.id %}">{%  trans 'Edit course' %}</a></li>
+                                <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'course-evaluations' course.slug %}">{%  trans 'Evaluations' %}</a></li>-->
+                                {% endif %}
                             </ul>
                         </div>
                     {% endif %}

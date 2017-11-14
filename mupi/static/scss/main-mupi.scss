@@ -4,23 +4,26 @@
 
 // Import Bootstrap's files
 // --------------------------------------------------
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "static/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Import Font Awesome's files
 // --------------------------------------------------
-@import "font-awesome/scss/font-awesome";
+@import "static/font-awesome/scss/font-awesome";
 
 @import 'modules/mixins.scss';
 @import 'modules/helpers.scss';
 
+@import 'components/actions-menu.scss';
 @import 'components/course-box.scss';
 @import 'components/course-content.scss';
 @import 'components/course-nav.scss';
+@import 'components/filters.scss';
 @import 'components/footer.scss';
 @import 'components/header.scss';
 @import 'components/headers.scss';
 @import 'components/text-editor.scss';
 
 @import 'pages/home.scss';
+@import 'pages/admin.scss';
 // @import 'pages/course.scss';
 // @import 'pages/forum.scss';

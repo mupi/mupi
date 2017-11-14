@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% load staticfiles %}
-{% load pipeline %}
+{% load static %}
+{% load compress %}
 
 {% block js %}
     {{ block.super }}
-    {% javascript 'course_material' %}
+    {% compress js %}
+        <!-- Course Material-->
+        <script type="text/javascript"  src="{% static 'js/course_material/app.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/course_material/controller.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/course_material/services.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/course_material/filters.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/directives/markdowneditor.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/directives/alertPopup.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/directives/fixedBar.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/dropzone/downloads/dropzone.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'js/angular-dropzone/lib/angular-dropzone.js' %}"></script>
+    {% endcompress %}
 {% endblock %}
 
 {% block wrapper_classes %}
@@ -21,7 +32,7 @@ wrapper-course-lesson
 <!-- CONTAINER -->
 <div id="course" class="course-material" ng-app="courseMaterial">
     <!-- ACTIONS -->
-    <div class="actions-menu actions-menu-message" ng-hide="alert.hidden" fixed-bar>
+    <div class="actions-menu actions-menu-message" ng-hide="alert.hidden">
         <div class="container">
             <div class="actions-buttons">
             </div>

@@ -1,25 +1,29 @@
 {% extends "base.html" %}
 
-{% load staticfiles %}
 {% load i18n %}
+{% load static %}
+{% load compress %}
 {% load timtec_markdown %}
 {% load is_assistant_or_coordinator %}
 {% load is_enrolled %}
 
 {% if in_admin %}
     {% block js %} {{block.super}}
-    <script type="text/javascript" src="{% static 'js/new-course/app.js' %}">// must be the 1º</script>
-    <script type="text/javascript" src="{% static 'js/factories/timtec-models.js' %}">// must be the 2º</script>
-    <script type="text/javascript" src="{% static 'js/filters/text.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/new-course/directives.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/directives/alertPopup.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/directives/contenteditable.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/directives/fixedBar.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/directives/markdowneditor.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/directives/sortable.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/new-course/controllers.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/markdown/app.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/markdown/filters.js' %}"></script>
+    {% compress js %}
+        <script type="text/javascript" src="{% static 'js/new-course/app.js' %}">// must be the 1º</script>
+        <script type="text/javascript" src="{% static 'js/factories/timtec-models.js' %}">// must be the 2º</script>
+        <script type="text/javascript" src="{% static 'js/filters/text.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/new-course/directives.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/alertPopup.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/contenteditable.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/fixedBar.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/markdowneditor.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/directives/sortable.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/new-course/controllers.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/markdown/app.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/markdown/filters.js' %}"></script>
+
+    {% endcompress %}
     <script>
         window.course_id = {{ course.pk }};
 
@@ -534,6 +538,7 @@ wrapper-course-intro
                                                           data-placement="bottom" data-original-title="{{unit.title}}">
                                                         <i class="fa fa-list" ng-show="unit.activities"></i>
                                                     </span>
+                                                    
                                                     {% endverbatim %}
                                                 </td>
                                             </tr>

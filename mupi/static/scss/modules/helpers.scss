@@ -1,6 +1,11 @@
 // HELPERS
 // ********************************************************************* //
 
+.hidder {
+  position: absolute;
+  left: -3000px;
+}
+
 // NO BORDERS
 
 .no-bottom-border { border-bottom: none !important; }

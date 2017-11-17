@@ -20,8 +20,8 @@
 }
 
 .editable-title {
-  @include editable;
-  @include editable-input;
+  @extend .editable;
+  @extend .editable-input;
   font-family: 'questrial';
   font-size: 28px;
   input {
@@ -31,8 +31,8 @@
 }
 
 .editable-slug {
-  @include editable;
-  @include editable-input;
+  @extend .editable;
+  @extend .editable-input;
   display: inline-block;
   font-size: 14px;
   width: 150px;
@@ -44,8 +44,8 @@
 }
 
 .editable-text {
-  @include editable;
-  @include editable-input;
+  @extend .editable;
+  @extend .editable-input;
   margin: 3px 0 10px;
   input {
     color: #999;
